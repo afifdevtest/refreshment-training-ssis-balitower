@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.ODS"
+  DTS:DTSID="{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=ODS;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-datalake-{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}LocalHost.ODS;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

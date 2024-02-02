@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="salesorder.afhive.pratama"
+  DTS:DTSID="{4AE2258C-42C2-4411-AE3D-D1D41DFBB746}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=afhive.pratama;Dsn=salesorder;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqITV9WEHk0+9WB9QepVxcgAAAAACAAAAAAADZgAAwAAAABAAAACaCYj7GOgMRgJIbuoqwK3GAAAAAASAAACgAAAAEAAAANU5OI0b1ElJ6tFBZs2CZmx4AAAAdppXIptlSui1U/wF4+j1+vWWZxa2NLs2DydzslJ060IGyqMumHR1+uxdgcOaqItjzQ/fLSAfy4r/UYIsvKIa71cYveyeb4cdrIr3znuw7Y4nZo+d2rvA/+UF7YNt0AEMVkY78mo21I7AGPBKHeRb9kd+wI5Q+/orFAAAAFnD8aSUP6/Nj7uS1Ij8zAjGu2kd</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="intranet-btssite.afhive.pratama"
+  DTS:DTSID="{DD3517F8-2435-4BC2-95FA-1CAF491B0C02}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=afhive.pratama;Dsn=intranet-btssite;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqITV9WEHk0+9WB9QepVxcgAAAAACAAAAAAADZgAAwAAAABAAAAD5/Q7pJPQtC1RWcob3mHG3AAAAAASAAACgAAAAEAAAAJs3WpfiRZdYFIOIMAfEx1J4AAAA3uPBfAvQr1cNkbfJfe+VbyyhFjJCBJYr33SxlSl/fcuOW6o84aC320FMbp8AfClkZHoiDKaVAYNSKS00DDKDQ2TUyPxwEed3J5m2mWw4UuMJhsfs0Cn8a94baCC+FCCzlHLMqx00d3x39zdnwU0IRejXt2b5UsGMFAAAADY3fiQMal1Lb9qU4SjfLAvorfln</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
