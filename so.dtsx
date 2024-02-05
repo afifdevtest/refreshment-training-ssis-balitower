@@ -11,11 +11,35 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="so"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{F246D283-ED1B-45B8-A140-C7EBD8D80DC1}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{445BE5AF-777C-45F0-BB57-4680BE5D91FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{12E9B859-05B7-4CD5-9313-75AC80376F23}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=smtp.gmail.com;UseWindowsAuthentication=True;EnableSsl=True;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1E819962-92CC-471B-A5AD-18C98ED225CA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_DATE) GETDATE()"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_date">
+      <DTS:VariableValue
+        DTS:DataType="7">2/5/2024 5:47:29 PM</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{40CC5932-AD15-4156-A825-3413DEC480B6}"
@@ -2614,6 +2638,37 @@
                       lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[rca_action_tsnoc]"
                       name="rca_action_tsnoc"
                       truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[dtpopulate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].ExternalColumns[dtpopulate]"
+                      lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[dtpopulate]"
+                      name="dtpopulate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[srcsystem]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].ExternalColumns[srcsystem]"
+                      length="50"
+                      lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[srcsystem]"
+                      name="srcsystem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[sysupdate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].ExternalColumns[sysupdate]"
+                      length="100"
+                      lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].Columns[sysupdate]"
+                      name="sysupdate"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2938,6 +2993,22 @@
                       dataType="str"
                       length="100"
                       name="rca_action_tsnoc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].ExternalColumns[dtpopulate]"
+                      dataType="dbTimeStamp"
+                      name="dtpopulate" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].ExternalColumns[srcsystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="srcsystem" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Output].ExternalColumns[sysupdate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="sysupdate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2945,6 +3016,25 @@
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[dtpopulate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[dtpopulate]"
+                      name="dtpopulate" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[srcsystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[srcsystem]"
+                      name="srcsystem" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[sysupdate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[sysupdate]"
+                      name="sysupdate" />
                     <outputColumn
                       refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[row_id]"
                       dataType="i8"
@@ -3338,6 +3428,993 @@
                       refId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\calltickettable-merge-diff\datalake.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\calltickettable-merge-diff\Delete calltickettable"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Delete calltickettable"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">delete from so.calltickettable
+where ticket_no=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\calltickettable-merge-diff\Delete calltickettable.Connections[OleDbConnection]"
+                  connectionManagerID="{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ODS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].Columns[conversion.ticket_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="conversion.ticket_no"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\calltickettable-merge-diff\Delete calltickettable.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\calltickettable-merge-diff\Delete calltickettable.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\Delete calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\calltickettable-merge-diff\Delete calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\Delete calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\calltickettable-merge-diff\Delete calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\calltickettable-merge-diff\Insert Calltickettable"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Calltickettable"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[so].[calltickettable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 5000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">50000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\calltickettable-merge-diff\Insert Calltickettable.Connections[OleDbConnection]"
+                  connectionManagerID="{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ODS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.row_id]"
+                      cachedDataType="i8"
+                      cachedName="conversion.row_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.ticket_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="conversion.ticket_no"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[ticket_no]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.typecall_id]"
+                      cachedDataType="i4"
+                      cachedName="conversion.typecall_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typecall_id]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typecall_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.subtypecall_id]"
+                      cachedDataType="i4"
+                      cachedName="conversion.subtypecall_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[subtypecall_id]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.subtypecall_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.caller_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.caller_name"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[caller_name]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.caller_name]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.home_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.home_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[home_id]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.home_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.customer_id]"
+                      cachedDataType="i4"
+                      cachedName="conversion.customer_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.customer_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.salesorder_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="conversion.salesorder_no"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[salesorder_no]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.salesorder_no]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.call_txt]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.call_txt"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[call_txt]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.call_txt]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.created_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.created_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[created_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.created_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.created_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.created_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.created_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.updated_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.updated_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[updated_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.updated_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.updated_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.updated_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[updated_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.updated_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.status"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.message]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.message"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[message]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.message]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.telp_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.telp_no"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[telp_no]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.telp_no]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.respon_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.respon_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[respon_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.respon_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.cancel_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.cancel_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[cancel_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.cancel_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.close_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.close_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[close_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.close_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.close_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.close_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[close_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.close_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.respon_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.respon_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[respon_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.respon_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.cancel_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.cancel_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[cancel_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.cancel_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.originticket]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.originticket"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[originticket]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.originticket]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.typeofcustomer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.typeofcustomer"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typeofcustomer]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typeofcustomer]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.requiredtehnicalvisit]"
+                      cachedDataType="i2"
+                      cachedName="conversion.requiredtehnicalvisit"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[requiredtehnicalvisit]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.requiredtehnicalvisit]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.upgrade_downgrade_to]"
+                      cachedDataType="i4"
+                      cachedName="conversion.upgrade_downgrade_to"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[upgrade_downgrade_to]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.upgrade_downgrade_to]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.typetehnical]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.typetehnical"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typetehnical]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typetehnical]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.typevisit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.typevisit"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typevisit]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typevisit]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.jml_stb]"
+                      cachedDataType="i4"
+                      cachedName="conversion.jml_stb"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[jml_stb]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.jml_stb]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.request_visit_install_solve_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.request_visit_install_solve_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_visit_install_solve_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_visit_install_solve_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.problem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="conversion.problem"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[problem]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.problem]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.corporate_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="conversion.corporate_name"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[corporate_name]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.corporate_name]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.request_visit_install_solve_date2]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.request_visit_install_solve_date2"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_visit_install_solve_date2]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_visit_install_solve_date2]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.request_visit_install_solve_date3]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.request_visit_install_solve_date3"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_visit_install_solve_date3]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_visit_install_solve_date3]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.sub_typeofcustomer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="conversion.sub_typeofcustomer"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[sub_typeofcustomer]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.sub_typeofcustomer]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.status_ts]"
+                      cachedDataType="i4"
+                      cachedName="conversion.status_ts"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status_ts]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status_ts]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.status_cc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.status_cc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status_cc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status_cc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.lastupdate_ts]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.lastupdate_ts"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[lastupdate_ts]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.lastupdate_ts]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.lastupdate_cc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.lastupdate_cc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[lastupdate_cc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.lastupdate_cc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.note_confirm]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.note_confirm"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[note_confirm]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.note_confirm]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.no_ttnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.no_ttnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[no_ttnoc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.no_ttnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.confirm_ts_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.confirm_ts_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[confirm_ts_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.confirm_ts_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.confirm_cc_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.confirm_cc_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[confirm_cc_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.confirm_cc_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.first_confirm_ts_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.first_confirm_ts_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[first_confirm_ts_by]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.first_confirm_ts_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.first_confirm_ts_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.first_confirm_ts_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[first_confirm_ts_date]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.first_confirm_ts_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.cnt_update]"
+                      cachedDataType="i4"
+                      cachedName="conversion.cnt_update"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[cnt_update]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.cnt_update]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.reason_type]"
+                      cachedDataType="i4"
+                      cachedName="conversion.reason_type"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[reason_type]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.reason_type]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.reason_subtype]"
+                      cachedDataType="i4"
+                      cachedName="conversion.reason_subtype"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[reason_subtype]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.reason_subtype]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.id_team_cc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.id_team_cc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[id_team_cc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.id_team_cc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.ticket_no_centerix]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.ticket_no_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[ticket_no_centerix]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.request_centerix]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.request_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_centerix]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.response_centerix]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.response_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[response_centerix]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.response_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.email"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.email]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.status_centerix]"
+                      cachedDataType="i4"
+                      cachedName="conversion.status_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status_centerix]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca1"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca1]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca1]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca2"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca2]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca2]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca3"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca3]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca3]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca_action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca_action"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca_action]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca_action]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca1_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca1_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca1_tsnoc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca1_tsnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca2_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca2_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca2_tsnoc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca2_tsnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca3_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca3_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca3_tsnoc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca3_tsnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.rca_action_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca_action_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca_action_tsnoc]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca_action_tsnoc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[dtpopulate]"
+                      dataType="dbTimeStamp"
+                      name="dtpopulate" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[srcsystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="srcsystem" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[sysupdate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="sysupdate" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
+                      dataType="i8"
+                      name="row_id" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[ticket_no]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ticket_no" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typecall_id]"
+                      dataType="i4"
+                      name="typecall_id" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[subtypecall_id]"
+                      dataType="i4"
+                      name="subtypecall_id" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[caller_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="caller_name" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[home_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="home_id" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="i4"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[salesorder_no]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="salesorder_no" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[call_txt]"
+                      codePage="1252"
+                      dataType="text"
+                      name="call_txt" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[created_date]"
+                      dataType="dbTimeStamp"
+                      name="created_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[created_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[updated_date]"
+                      dataType="dbTimeStamp"
+                      name="updated_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[updated_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="updated_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[message]"
+                      codePage="1252"
+                      dataType="text"
+                      name="message" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[telp_no]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="telp_no" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[respon_date]"
+                      dataType="dbTimeStamp"
+                      name="respon_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[cancel_date]"
+                      dataType="dbTimeStamp"
+                      name="cancel_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[close_date]"
+                      dataType="dbTimeStamp"
+                      name="close_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[close_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="close_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[respon_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="respon_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[cancel_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="cancel_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[originticket]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="originticket" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typeofcustomer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="typeofcustomer" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[requiredtehnicalvisit]"
+                      dataType="ui1"
+                      name="requiredtehnicalvisit" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[upgrade_downgrade_to]"
+                      dataType="i4"
+                      name="upgrade_downgrade_to" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typetehnical]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="typetehnical" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[typevisit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="typevisit" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[jml_stb]"
+                      dataType="i4"
+                      name="jml_stb" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_visit_install_solve_date]"
+                      dataType="dbTimeStamp"
+                      name="request_visit_install_solve_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[problem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="problem" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[corporate_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="corporate_name" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_visit_install_solve_date2]"
+                      dataType="dbTimeStamp"
+                      name="request_visit_install_solve_date2" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_visit_install_solve_date3]"
+                      dataType="dbTimeStamp"
+                      name="request_visit_install_solve_date3" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[sub_typeofcustomer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="sub_typeofcustomer" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status_ts]"
+                      dataType="i4"
+                      name="status_ts" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status_cc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="status_cc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[lastupdate_ts]"
+                      dataType="dbTimeStamp"
+                      name="lastupdate_ts" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[lastupdate_cc]"
+                      dataType="dbTimeStamp"
+                      name="lastupdate_cc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[note_confirm]"
+                      codePage="1252"
+                      dataType="text"
+                      name="note_confirm" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[no_ttnoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="no_ttnoc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[confirm_ts_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="confirm_ts_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[confirm_cc_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="confirm_cc_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[first_confirm_ts_by]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="first_confirm_ts_by" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[first_confirm_ts_date]"
+                      dataType="dbTimeStamp"
+                      name="first_confirm_ts_date" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[cnt_update]"
+                      dataType="i4"
+                      name="cnt_update" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[reason_type]"
+                      dataType="i4"
+                      name="reason_type" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[reason_subtype]"
+                      dataType="i4"
+                      name="reason_subtype" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[id_team_cc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="id_team_cc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[ticket_no_centerix]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ticket_no_centerix" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[request_centerix]"
+                      codePage="1252"
+                      dataType="text"
+                      name="request_centerix" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[response_centerix]"
+                      codePage="1252"
+                      dataType="text"
+                      name="response_centerix" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[status_centerix]"
+                      dataType="i4"
+                      name="status_centerix" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca1" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca2" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca3" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca_action]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca_action" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca1_tsnoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca1_tsnoc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca2_tsnoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca2_tsnoc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca3_tsnoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca3_tsnoc" />
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[rca_action_tsnoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rca_action_tsnoc" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\calltickettable-merge-diff\Insert Calltickettable.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\calltickettable-merge-diff\Insert Calltickettable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\Insert Calltickettable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\calltickettable-merge-diff\Insert Calltickettable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -11265,6 +12342,1349 @@ WHERE
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\calltickettable-merge-diff\Update calltickettable"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update calltickettable"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update so.calltickettable
+set
+row_id=?,
+typecall_id=?,
+subtypecall_id=?,
+caller_name=?,
+home_id=?,
+customer_id=?,
+salesorder_no=?,
+call_txt=?,
+created_date=?,
+created_by=?,
+updated_date=?,
+updated_by=?,
+status=?,
+message=?,
+telp_no=?,
+respon_date=?,
+cancel_date=?,
+close_date=?,
+close_by=?,
+respon_by=?,
+cancel_by=?,
+originticket=?,
+typeofcustomer=?,
+requiredtehnicalvisit=?,
+upgrade_downgrade_to=?,
+typetehnical=?,
+typevisit=?,
+jml_stb=?,
+request_visit_install_solve_date=?,
+problem=?,
+corporate_name=?,
+request_visit_install_solve_date2=?,
+request_visit_install_solve_date3=?,
+sub_typeofcustomer=?,
+status_ts=?,
+status_cc=?,
+lastupdate_ts=?,
+lastupdate_cc=?,
+note_confirm=?,
+no_ttnoc=?,
+confirm_ts_by=?,
+confirm_cc_by=?,
+first_confirm_ts_by=?,
+first_confirm_ts_date=?,
+cnt_update=?,
+reason_type=?,
+reason_subtype=?,
+id_team_cc=?,
+ticket_no_centerix=?,
+request_centerix=?,
+response_centerix=?,
+email=?,
+status_centerix=?,
+rca1=?,
+rca2=?,
+rca3=?,
+rca_action=?,
+rca1_tsnoc=?,
+rca2_tsnoc=?,
+rca3_tsnoc=?,
+rca_action_tsnoc=?
+where
+ticket_no=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\calltickettable-merge-diff\Update calltickettable.Connections[OleDbConnection]"
+                  connectionManagerID="{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.ODS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.row_id]"
+                      cachedDataType="i8"
+                      cachedName="conversion.row_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.typecall_id]"
+                      cachedDataType="i4"
+                      cachedName="conversion.typecall_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typecall_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.ticket_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="conversion.ticket_no"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.subtypecall_id]"
+                      cachedDataType="i4"
+                      cachedName="conversion.subtypecall_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.subtypecall_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.caller_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.caller_name"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.caller_name]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.home_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.home_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.home_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.customer_id]"
+                      cachedDataType="i4"
+                      cachedName="conversion.customer_id"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.customer_id]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.salesorder_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="conversion.salesorder_no"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.salesorder_no]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.call_txt]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.call_txt"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.call_txt]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.created_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.created_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.created_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.created_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.created_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.created_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.updated_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.updated_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.updated_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.updated_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.updated_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.updated_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.status"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.message]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.message"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.message]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.telp_no]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.telp_no"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.telp_no]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.respon_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.respon_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.respon_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.cancel_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.cancel_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.cancel_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.close_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.close_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.close_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.close_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.close_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.close_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.respon_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.respon_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.respon_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.cancel_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="45"
+                      cachedName="conversion.cancel_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.cancel_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.originticket]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.originticket"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.originticket]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.typeofcustomer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="conversion.typeofcustomer"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typeofcustomer]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.requiredtehnicalvisit]"
+                      cachedDataType="i2"
+                      cachedName="conversion.requiredtehnicalvisit"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.requiredtehnicalvisit]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.upgrade_downgrade_to]"
+                      cachedDataType="i4"
+                      cachedName="conversion.upgrade_downgrade_to"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.upgrade_downgrade_to]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.typetehnical]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.typetehnical"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typetehnical]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.typevisit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.typevisit"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.typevisit]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.jml_stb]"
+                      cachedDataType="i4"
+                      cachedName="conversion.jml_stb"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.jml_stb]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.request_visit_install_solve_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.request_visit_install_solve_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_visit_install_solve_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.problem]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="conversion.problem"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.problem]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.corporate_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="conversion.corporate_name"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.corporate_name]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.request_visit_install_solve_date2]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.request_visit_install_solve_date2"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_visit_install_solve_date2]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.request_visit_install_solve_date3]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.request_visit_install_solve_date3"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_visit_install_solve_date3]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.sub_typeofcustomer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="conversion.sub_typeofcustomer"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.sub_typeofcustomer]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.status_ts]"
+                      cachedDataType="i4"
+                      cachedName="conversion.status_ts"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status_ts]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.status_cc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.status_cc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status_cc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.lastupdate_ts]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.lastupdate_ts"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.lastupdate_ts]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.lastupdate_cc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.lastupdate_cc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.lastupdate_cc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.note_confirm]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.note_confirm"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.note_confirm]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.no_ttnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.no_ttnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_39]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.no_ttnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.confirm_ts_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.confirm_ts_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.confirm_ts_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.confirm_cc_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.confirm_cc_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_41]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.confirm_cc_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.first_confirm_ts_by]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.first_confirm_ts_by"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.first_confirm_ts_by]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.first_confirm_ts_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="conversion.first_confirm_ts_date"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_43]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.first_confirm_ts_date]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.cnt_update]"
+                      cachedDataType="i4"
+                      cachedName="conversion.cnt_update"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_44]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.cnt_update]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.reason_type]"
+                      cachedDataType="i4"
+                      cachedName="conversion.reason_type"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.reason_type]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.reason_subtype]"
+                      cachedDataType="i4"
+                      cachedName="conversion.reason_subtype"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.reason_subtype]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.id_team_cc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.id_team_cc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.id_team_cc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.ticket_no_centerix]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.ticket_no_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.request_centerix]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.request_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_49]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.request_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.response_centerix]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="conversion.response_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_50]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.response_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.email"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.email]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.status_centerix]"
+                      cachedDataType="i4"
+                      cachedName="conversion.status_centerix"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.status_centerix]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca1"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca1]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca2"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca2]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca3"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca3]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca_action]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca_action"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca_action]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca1_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca1_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_57]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca1_tsnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca2_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca2_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_58]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca2_tsnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca3_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca3_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_59]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca3_tsnoc]" />
+                    <inputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.rca_action_tsnoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="conversion.rca_action_tsnoc"
+                      externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_60]"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.rca_action_tsnoc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">17</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="dbTimeStamp"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="dbTimeStamp"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      dataType="dbTimeStamp"
+                      name="Param_15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      dataType="dbTimeStamp"
+                      name="Param_16">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      dataType="dbTimeStamp"
+                      name="Param_17">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_18">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_19">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      codePage="1252"
+                      dataType="str"
+                      length="45"
+                      name="Param_20">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_21">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_22">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      dataType="ui1"
+                      name="Param_23">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                      dataType="i4"
+                      name="Param_24">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_25">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_26">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
+                      dataType="i4"
+                      name="Param_27">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
+                      dataType="dbTimeStamp"
+                      name="Param_28">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_29">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_30">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
+                      dataType="dbTimeStamp"
+                      name="Param_31">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
+                      dataType="dbTimeStamp"
+                      name="Param_32">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_33">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
+                      dataType="i4"
+                      name="Param_34">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_35">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
+                      dataType="dbTimeStamp"
+                      name="Param_36">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
+                      dataType="dbTimeStamp"
+                      name="Param_37">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_38">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_39]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_39">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_40">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_41]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_41">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_42">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_43]"
+                      dataType="dbTimeStamp"
+                      name="Param_43">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_44]"
+                      dataType="i4"
+                      name="Param_44">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
+                      dataType="i4"
+                      name="Param_45">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
+                      dataType="i4"
+                      name="Param_46">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_47">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_48">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_49]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_49">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_50]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Param_50">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_51">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">193</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
+                      dataType="i4"
+                      name="Param_52">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_53">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_54">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_55">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_56">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_57]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_57">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_58]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_58">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_59]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_59">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_60]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_60">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Param_61">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\calltickettable-merge-diff\Update calltickettable.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\calltickettable-merge-diff\Update calltickettable.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\calltickettable-merge-diff\Update calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\calltickettable-merge-diff\Update calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\calltickettable-merge-diff\Update calltickettable.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -11277,6 +13697,16 @@ WHERE
               endId="Package\calltickettable-merge-diff\Sort.Inputs[Sort Input]"
               name="Data Conversion Output"
               startId="Package\calltickettable-merge-diff\conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\calltickettable-merge-diff.Paths[Delete]"
+              endId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input]"
+              name="Delete"
+              startId="Package\calltickettable-merge-diff\Conditional Split.Outputs[Delete]" />
+            <path
+              refId="Package\calltickettable-merge-diff.Paths[Insert]"
+              endId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input]"
+              name="Insert"
+              startId="Package\calltickettable-merge-diff\Conditional Split.Outputs[Insert]" />
             <path
               refId="Package\calltickettable-merge-diff.Paths[Merge Join Output]"
               endId="Package\calltickettable-merge-diff\Conditional Split.Inputs[Conditional Split Input]"
@@ -11297,11 +13727,46 @@ WHERE
               endId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\calltickettable-merge-diff.Paths[Update]"
+              endId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input]"
+              name="Update"
+              startId="Package\calltickettable-merge-diff\Conditional Split.Outputs[Update]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send Mail Task"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Send Mail Task"
+      DTS:DTSID="{3B311F3F-DD70-4310-84B0-1F7A298597B2}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send Mail Task"
+      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{12E9B859-05B7-4CD5-9313-75AC80376F23}"
+          SendMailTask:From="afifdevtest@gmail.com"
+          SendMailTask:To="afifpratama.work@gmail.com"
+          SendMailTask:Subject="test"
+          SendMailTask:MessageSource="test" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EA88F0DB-5757-4218-8645-2FA9D7BAAFA4}"
+      DTS:From="Package\calltickettable-merge-diff"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Send Mail Task" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -11313,11 +13778,37 @@ WHERE
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\calltickettable-merge-diff"
-          TopLeft="102.166661385033,63.5666662628783" />
+          TopLeft="302.999983745317,188.366665395035" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Send Mail Task"
+          TopLeft="297.166650730703,317.499997830391" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="375.08331723801,229.966665395035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87.533332435356"
+              Start="0,0"
+              End="0,80.033332435356">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.033332435356" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -11325,21 +13816,49 @@ WHERE
     design-time-name="Package\calltickettable-merge-diff">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\calltickettable-merge-diff\src_calltickettable"
+          TopLeft="139.666659336124,35.2499997739991" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\calltickettable-merge-diff\Merge Join"
+          TopLeft="345.833314437834,248.733331603673" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\calltickettable-merge-diff\Sort"
+          TopLeft="162.499991121392,249.311109377433" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\calltickettable-merge-diff\conversion"
+          TopLeft="139.666659336124,142.433332381116" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\calltickettable-merge-diff\datalake"
+          TopLeft="528.333304466474,34.3833331133591" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\calltickettable-merge-diff\Conditional Split"
+          TopLeft="333.333315120804,355.33333086239" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\calltickettable-merge-diff\Sort 1"
+          TopLeft="556.666636251742,249.311109377433" />
         <EdgeLayout
           Id="Package\calltickettable-merge-diff.Paths[Sort Output1]"
           TopLeft="556.666636251742,269.822220490553">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-81.2333218139081,0"
+              EndConnector="-81.233321813908,0"
               Start="0,0"
-              End="-73.7333218139081,0">
+              End="-73.733321813908,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-73.7333218139081,0" />
+                    End="-73.733321813908,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11354,14 +13873,14 @@ WHERE
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85.7333233164421,0"
+              EndConnector="85.733323316442,0"
               Start="0,0"
-              End="78.2333233164421,0">
+              End="78.233323316442,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="78.2333233164421,0" />
+                    End="78.233323316442,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11370,10 +13889,6 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\calltickettable-merge-diff\Merge Join"
-          TopLeft="345.833314437834,248.733331603673" />
         <EdgeLayout
           Id="Package\calltickettable-merge-diff.Paths[OLE DB Source Output]"
           TopLeft="607.099970359108,75.9833331133591">
@@ -11396,10 +13911,28 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\calltickettable-merge-diff\Sort 1"
-          TopLeft="556.666636251742,249.311109377433" />
+        <EdgeLayout
+          Id="Package\calltickettable-merge-diff.Paths[Merge Join Output]"
+          TopLeft="410.383314779319,290.333331603673">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.999999258717"
+              Start="0,0"
+              End="0,57.499999258717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.499999258717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\calltickettable-merge-diff.Paths[Data Conversion Output]"
           TopLeft="214.483325228758,184.033332381116">
@@ -11422,14 +13955,6 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\calltickettable-merge-diff\Sort"
-          TopLeft="162.499991121392,249.311109377433" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\calltickettable-merge-diff\datalake"
-          TopLeft="528.333304466474,34.3833331133591" />
         <EdgeLayout
           Id="Package\calltickettable-merge-diff.Paths[ADO NET Source Output]"
           TopLeft="218.666659336124,76.8499997739991">
@@ -11453,37 +13978,111 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\calltickettable-merge-diff\src_calltickettable"
-          TopLeft="139.666659336124,35.2499997739991" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\calltickettable-merge-diff\conversion"
-          TopLeft="139.666659336124,142.433332381116" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\calltickettable-merge-diff\Conditional Split"
-          TopLeft="333.333315120804,355.33333086239" />
+          Size="167.2,41.6"
+          Id="Package\calltickettable-merge-diff\Delete calltickettable"
+          TopLeft="41.3333313754864,450.966663568947" />
         <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Merge Join Output]"
-          TopLeft="410.383314779319,290.333331603673">
+          Id="Package\calltickettable-merge-diff.Paths[Delete]"
+          TopLeft="385.866648454137,396.93333086239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.9999992587169"
+              EndConnector="-260.933317078651,54.0333327065571"
               Start="0,0"
-              End="0,57.4999992587169">
+              End="-260.933317078651,46.5333327065571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.4999992587169" />
+                    End="0,17.9475598828696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9475598828696"
+                    Point2="0,21.9475598828696"
+                    Point3="-4,21.9475598828696" />
+                  <mssgle:LineSegment
+                    End="-256.933317078651,21.9475598828696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-256.933317078651,21.9475598828696"
+                    Point2="-260.933317078651,21.9475598828696"
+                    Point3="-260.933317078651,25.9475598828696" />
+                  <mssgle:LineSegment
+                    End="-260.933317078651,46.5333327065571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-145.063006195575,26.9475598828696,29.1926953125,9.724609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\calltickettable-merge-diff\Insert Calltickettable"
+          TopLeft="354.999980603656,450.999996908307" />
+        <EdgeLayout
+          Id="Package\calltickettable-merge-diff.Paths[Insert]"
+          TopLeft="437.699981195563,396.93333086239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.0666660459171"
+              Start="0,0"
+              End="0,46.5666660459171">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5666660459171" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-13.75298828125,18.5821611479586,27.5059765625,9.40234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\calltickettable-merge-diff\Update calltickettable"
+          TopLeft="644.833298319745,453.133330265747" />
+        <EdgeLayout
+          Id="Package\calltickettable-merge-diff.Paths[Update]"
+          TopLeft="446.533315120804,396.93333086239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="281.899983198941,56.1999994033573"
+              Start="0,0"
+              End="281.899983198941,48.6999994033573">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3726960400651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3726960400651"
+                    Point2="0,19.3726960400651"
+                    Point3="4,19.3726960400651" />
+                  <mssgle:LineSegment
+                    End="277.899983198941,19.3726960400651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="277.899983198941,19.3726960400651"
+                    Point2="281.899983198941,19.3726960400651"
+                    Point3="281.899983198941,23.3726960400651" />
+                  <mssgle:LineSegment
+                    End="281.899983198941,48.6999994033573" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="124.669698630721,24.3726960400651,32.5605859375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11499,6 +14098,19 @@ WHERE
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\calltickettable-merge-diff\datalake">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\calltickettable-merge-diff\Insert Calltickettable">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
