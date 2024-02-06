@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="so"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{445BE5AF-777C-45F0-BB57-4680BE5D91FB}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{A1B697BB-D347-45EE-A3CB-2FDC32D55D27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="current_date">
       <DTS:VariableValue
-        DTS:DataType="7">2/5/2024 5:47:29 PM</DTS:VariableValue>
+        DTS:DataType="7">2/6/2024 5:18:17 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -57,6 +57,46 @@
       DTS:ObjectName="Insert">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{29E8D6E9-5814-4744-A5B6-B5E0C1A819D8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="mailprofile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4A9672BA-A95B-45CD-A03E-E0EEEC13EED1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="mailrecipient">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C99AB3DD-43DA-44AD-BE57-08A989A97085}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="mailsubject">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9E9C8463-F5DF-4928-BA74-965C955496FA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="srcdir">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -98,20 +138,16 @@
                   name="Conditional Split Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\calltickettable-merge-diff\Conditional Split.Inputs[Conditional Split Input].Columns[conversion.ticket_no]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="conversion.ticket_no"
+                      refId="Package\calltickettable-merge-diff\Conditional Split.Inputs[Conditional Split Input].Columns[conversion.row_id]"
+                      cachedDataType="i8"
+                      cachedName="conversion.row_id"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]" />
                     <inputColumn
-                      refId="Package\calltickettable-merge-diff\Conditional Split.Inputs[Conditional Split Input].Columns[ticket_no]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="ticket_no"
-                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[ticket_no]" />
+                      refId="Package\calltickettable-merge-diff\Conditional Split.Inputs[Conditional Split Input].Columns[row_id]"
+                      cachedDataType="i8"
+                      cachedName="row_id"
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[row_id]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -131,13 +167,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[ticket_no]}) &amp;&amp; ![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]})</property>
+                      name="Expression">![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[row_id]}) &amp;&amp; ![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(ticket_no) &amp;&amp; !ISNULL([conversion.ticket_no])</property>
+                      name="FriendlyExpression">!ISNULL(row_id) &amp;&amp; !ISNULL([conversion.row_id])</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -159,13 +195,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[ticket_no]}) &amp;&amp; ![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]})</property>
+                      name="Expression">[ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[row_id]}) &amp;&amp; ![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL(ticket_no) &amp;&amp; !ISNULL([conversion.ticket_no])</property>
+                      name="FriendlyExpression">ISNULL(row_id) &amp;&amp; !ISNULL([conversion.row_id])</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -187,13 +223,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[ticket_no]}) &amp;&amp; [ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]})</property>
+                      name="Expression">![ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[row_id]}) &amp;&amp; [ISNULL](#{Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(ticket_no) &amp;&amp; ISNULL([conversion.ticket_no])</property>
+                      name="FriendlyExpression">!ISNULL(row_id) &amp;&amp; ISNULL([conversion.row_id])</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -3454,7 +3490,7 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">delete from so.calltickettable
-where ticket_no=?</property>
+where row_id=?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3477,22 +3513,18 @@ where ticket_no=?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].Columns[conversion.ticket_no]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="conversion.ticket_no"
+                      refId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].Columns[conversion.row_id]"
+                      cachedDataType="i8"
+                      cachedName="conversion.row_id"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
+                      lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\calltickettable-merge-diff\Delete calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
+                      dataType="i8"
                       name="Param_0">
                       <properties>
                         <property
@@ -3612,6 +3644,7 @@ where ticket_no=?</property>
                       refId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].Columns[conversion.row_id]"
                       cachedDataType="i8"
                       cachedName="conversion.row_id"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
                       lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]" />
                     <inputColumn
@@ -3620,7 +3653,6 @@ where ticket_no=?</property>
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="conversion.ticket_no"
-                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\calltickettable-merge-diff\Insert Calltickettable.Inputs[OLE DB Destination Input].ExternalColumns[ticket_no]"
                       lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
                     <inputColumn
@@ -4455,18 +4487,18 @@ where ticket_no=?</property>
                   name="Merge Join Left Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Left Input].Columns[conversion.row_id]"
+                      cachedDataType="i8"
+                      cachedName="conversion.row_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\calltickettable-merge-diff\Sort.Outputs[Sort Output].Columns[conversion.row_id]" />
+                    <inputColumn
                       refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Left Input].Columns[conversion.ticket_no]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="conversion.ticket_no"
-                      cachedSortKeyPosition="1"
                       lineageId="Package\calltickettable-merge-diff\Sort.Outputs[Sort Output].Columns[conversion.ticket_no]" />
-                    <inputColumn
-                      refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Left Input].Columns[conversion.row_id]"
-                      cachedDataType="i8"
-                      cachedName="conversion.row_id"
-                      lineageId="Package\calltickettable-merge-diff\Sort.Outputs[Sort Output].Columns[conversion.row_id]" />
                     <inputColumn
                       refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Left Input].Columns[conversion.typecall_id]"
                       cachedDataType="i4"
@@ -4847,18 +4879,18 @@ where ticket_no=?</property>
                   name="Merge Join Right Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Right Input].Columns[row_id]"
+                      cachedDataType="i8"
+                      cachedName="row_id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output].Columns[row_id]" />
+                    <inputColumn
                       refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Right Input].Columns[ticket_no]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="ticket_no"
-                      cachedSortKeyPosition="1"
                       lineageId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output].Columns[ticket_no]" />
-                    <inputColumn
-                      refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Right Input].Columns[row_id]"
-                      cachedDataType="i8"
-                      cachedName="row_id"
-                      lineageId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output].Columns[row_id]" />
                     <inputColumn
                       refId="Package\calltickettable-merge-diff\Merge Join.Inputs[Merge Join Right Input].Columns[typecall_id]"
                       cachedDataType="i4"
@@ -5244,7 +5276,8 @@ where ticket_no=?</property>
                       refId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]"
                       dataType="i8"
                       lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]"
-                      name="conversion.row_id">
+                      name="conversion.row_id"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -5259,8 +5292,7 @@ where ticket_no=?</property>
                       dataType="str"
                       length="20"
                       lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]"
-                      name="conversion.ticket_no"
-                      sortKeyPosition="1">
+                      name="conversion.ticket_no">
                       <properties>
                         <property
                           containsID="true"
@@ -7040,7 +7072,7 @@ where ticket_no=?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -7058,7 +7090,7 @@ where ticket_no=?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -8106,7 +8138,8 @@ where ticket_no=?</property>
                       refId="Package\calltickettable-merge-diff\Sort.Outputs[Sort Output].Columns[conversion.row_id]"
                       dataType="i8"
                       lineageId="Package\calltickettable-merge-diff\Sort.Outputs[Sort Output].Columns[conversion.row_id]"
-                      name="conversion.row_id">
+                      name="conversion.row_id"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -8121,8 +8154,7 @@ where ticket_no=?</property>
                       dataType="str"
                       length="20"
                       lineageId="Package\calltickettable-merge-diff\Sort.Outputs[Sort Output].Columns[conversion.ticket_no]"
-                      name="conversion.ticket_no"
-                      sortKeyPosition="1">
+                      name="conversion.ticket_no">
                       <properties>
                         <property
                           containsID="true"
@@ -9023,7 +9055,7 @@ where ticket_no=?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -9041,7 +9073,7 @@ where ticket_no=?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -10089,7 +10121,8 @@ where ticket_no=?</property>
                       refId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output].Columns[row_id]"
                       dataType="i8"
                       lineageId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output].Columns[row_id]"
-                      name="row_id">
+                      name="row_id"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -10104,8 +10137,7 @@ where ticket_no=?</property>
                       dataType="str"
                       length="20"
                       lineageId="Package\calltickettable-merge-diff\Sort 1.Outputs[Sort Output].Columns[ticket_no]"
-                      name="ticket_no"
-                      sortKeyPosition="1">
+                      name="ticket_no">
                       <properties>
                         <property
                           containsID="true"
@@ -12450,6 +12482,7 @@ ticket_no=?</property>
                       refId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].Columns[conversion.row_id]"
                       cachedDataType="i8"
                       cachedName="conversion.row_id"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.row_id]" />
                     <inputColumn
@@ -12464,7 +12497,6 @@ ticket_no=?</property>
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="conversion.ticket_no"
-                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\calltickettable-merge-diff\Update calltickettable.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
                       lineageId="Package\calltickettable-merge-diff\Merge Join.Outputs[Merge Join Output].Columns[conversion.ticket_no]" />
                     <inputColumn
@@ -13737,23 +13769,70 @@ ticket_no=?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Send Mail Task"
-      DTS:CreationName="Microsoft.SendMailTask"
-      DTS:Description="Send Mail Task"
-      DTS:DTSID="{3B311F3F-DD70-4310-84B0-1F7A298597B2}"
-      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:refId="Package\declare variable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CC6EBF52-E9A2-4EF4-9C53-CD285DD89237}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Send Mail Task"
-      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="declare variable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{12E9B859-05B7-4CD5-9313-75AC80376F23}"
-          SendMailTask:From="afifdevtest@gmail.com"
-          SendMailTask:To="afifpratama.work@gmail.com"
-          SendMailTask:Subject="test"
-          SendMailTask:MessageSource="test" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}"
+          SQLTask:SqlStatementSource="select&#xA;(select paramvalue from etl.msetlparameter where paramname='mailprofile')mailprofile,&#xA;(select paramvalue from etl.msetlparameter where paramname='srcdir')srcdir,&#xA;(select paramvalue from etl.msetlparameter where paramname='mailrecipient')mailrecipient,&#xA;(select concat(paramvalue,' - ',format(getdate(),'dd MMM yyyy HH:mm:ss')) from etl.msetlparameter where paramname='mailsubject') mailsubject"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="mailprofile"
+            SQLTask:DtsVariableName="User::mailprofile" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="srcdir"
+            SQLTask:DtsVariableName="User::srcdir" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="mailrecipient"
+            SQLTask:DtsVariableName="User::mailrecipient" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="mailsubject"
+            SQLTask:DtsVariableName="User::mailsubject" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Notification Succes"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4A71B4B2-A81F-496A-BA98-574FBC1A7F9D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Notification Succes"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8A098E76-5CA6-4F2B-B9DB-DB9525A6AC45}"
+          SQLTask:SqlStatementSource="DECLARE &#xA;    /*==============Database Mail Profile Variable==============*/&#xA;    @profile_name nvarchar(50) = ?&#xA;    ,@recipients nvarchar(max) = ?&#xA;    ,@subject nvarchar(100) = ?&#xA;    ,@body_format nvarchar(10) = 'html'&#xA;    ,@importance NVARCHAR(10) = 'high'&#xA;    ,@file_attachments nvarchar(150) = NULL&#xA;    ,@body nvarchar(max)&#xA;    /*==============Database Mail Profile Variable==============*/&#xA;&#xA;SET @body =&#xA;'&lt;html&gt;&#xA;&lt;body&gt;&#xA;    &lt;p&gt;This notification email generated automatically by system. The following is detail of run job :&lt;/p&gt;&#xA;&lt;br&gt;&#xA;&#x9;&lt;p&gt;Please dont reply this email.&lt;/p&gt;&#xA;    &lt;br&gt;&#xA;        &lt;p&gt;Regards,&lt;p&gt;&#xA;        &lt;p&gt;&lt;font color =&quot;grey&quot;&gt;Data Team SQL Server System Administrator&lt;/font&gt;&lt;/p&gt;&#xA;    &lt;/body&gt;&#xA;&lt;/html&gt;'&#xA;&#xA;EXEC msdb.dbo.sp_send_dbmail&#xA;@profile_name = @profile_name /*Database profile name*/&#xA;,@body = @body&#xA;,@body_format = @body_format&#xA;,@recipients = @recipients&#xA;,@subject = @subject&#xA;,@importance = @importance&#xA;/*Attachment variable*/&#xA;,@file_attachments = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::mailprofile"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="50" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::mailrecipient"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="100" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::mailsubject"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="100" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -13761,11 +13840,19 @@ ticket_no=?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{EA88F0DB-5757-4218-8645-2FA9D7BAAFA4}"
-      DTS:From="Package\calltickettable-merge-diff"
+      DTS:DTSID="{1723AFF0-EDEE-4967-A395-227D8EB89782}"
+      DTS:From="Package\declare variable"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Send Mail Task" />
+      DTS:To="Package\calltickettable-merge-diff" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{16598CDC-06E8-4A1D-A6DC-39DFD39C85A2}"
+      DTS:From="Package\calltickettable-merge-diff"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Notification Succes" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -13778,29 +13865,55 @@ ticket_no=?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\calltickettable-merge-diff"
           TopLeft="302.999983745317,188.366665395035" />
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Send Mail Task"
-          TopLeft="297.166650730703,317.499997830391" />
+          Size="164.8,41.6"
+          Id="Package\declare variable"
+          TopLeft="294.999983881912,65.8666662086381" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="375.08331723801,229.966665395035">
+          TopLeft="377.799983813614,107.466666208638">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,87.533332435356"
+              EndConnector="0,80.8999991863969"
               Start="0,0"
-              End="0,80.033332435356">
+              End="0,73.3999991863969">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,80.033332435356" />
+                    End="0,73.3999991863969" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Notification Succes"
+          TopLeft="293.833317579495,293.233331332472" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="377.216650662406,229.966665395035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.2666659374367"
+              Start="0,0"
+              End="0,55.7666659374367">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.7666659374367" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13818,17 +13931,21 @@ ticket_no=?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\calltickettable-merge-diff\src_calltickettable"
-          TopLeft="139.666659336124,35.2499997739991" />
+          Size="177.6,41.6"
+          Id="Package\calltickettable-merge-diff\Update calltickettable"
+          TopLeft="644.833298319745,453.133330265747" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\calltickettable-merge-diff\Merge Join"
-          TopLeft="345.833314437834,248.733331603673" />
+          Size="106.4,41.6"
+          Id="Package\calltickettable-merge-diff\Sort 1"
+          TopLeft="556.666636251742,249.311109377433" />
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\calltickettable-merge-diff\Sort"
-          TopLeft="162.499991121392,249.311109377433" />
+          Size="167.2,41.6"
+          Id="Package\calltickettable-merge-diff\Delete calltickettable"
+          TopLeft="41.3333313754864,450.966663568947" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\calltickettable-merge-diff\Insert Calltickettable"
+          TopLeft="354.999980603656,450.999996908307" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\calltickettable-merge-diff\conversion"
@@ -13838,55 +13955,51 @@ ticket_no=?</property>
           Id="Package\calltickettable-merge-diff\datalake"
           TopLeft="528.333304466474,34.3833331133591" />
         <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\calltickettable-merge-diff\Sort"
+          TopLeft="162.499991121392,249.311109377433" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\calltickettable-merge-diff\src_calltickettable"
+          TopLeft="139.666659336124,35.2499997739991" />
+        <NodeLayout
           Size="153.6,41.6"
           Id="Package\calltickettable-merge-diff\Conditional Split"
           TopLeft="333.333315120804,355.33333086239" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\calltickettable-merge-diff\Sort 1"
-          TopLeft="556.666636251742,249.311109377433" />
         <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Sort Output1]"
-          TopLeft="556.666636251742,269.822220490553">
+          Id="Package\calltickettable-merge-diff.Paths[Update]"
+          TopLeft="446.533315120804,396.93333086239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-81.233321813908,0"
+              EndConnector="281.899983198941,56.1999994033573"
               Start="0,0"
-              End="-73.733321813908,0">
+              End="281.899983198941,48.6999994033573">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-73.733321813908,0" />
+                    End="0,15.3726960400651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3726960400651"
+                    Point2="0,19.3726960400651"
+                    Point3="4,19.3726960400651" />
+                  <mssgle:LineSegment
+                    End="277.899983198941,19.3726960400651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="277.899983198941,19.3726960400651"
+                    Point2="281.899983198941,19.3726960400651"
+                    Point3="281.899983198941,23.3726960400651" />
+                  <mssgle:LineSegment
+                    End="281.899983198941,48.6999994033573" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Sort Output]"
-          TopLeft="260.099991121392,269.822220490553">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.733323316442,0"
-              Start="0,0"
-              End="78.233323316442,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.233323316442,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="124.669698630721,24.3726960400651,32.5605859375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13912,25 +14025,63 @@ ticket_no=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Merge Join Output]"
-          TopLeft="410.383314779319,290.333331603673">
+          Id="Package\calltickettable-merge-diff.Paths[Insert]"
+          TopLeft="437.699981195563,396.93333086239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.999999258717"
+              EndConnector="0,54.0666660459171"
               Start="0,0"
-              End="0,57.499999258717">
+              End="0,46.5666660459171">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.499999258717" />
+                    End="0,46.5666660459171" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-13.75298828125,18.5821611479586,27.5059765625,9.40234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\calltickettable-merge-diff.Paths[Delete]"
+          TopLeft="385.866648454137,396.93333086239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-260.933317078651,54.0333327065571"
+              Start="0,0"
+              End="-260.933317078651,46.5333327065571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9475598828696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9475598828696"
+                    Point2="0,21.9475598828696"
+                    Point3="-4,21.9475598828696" />
+                  <mssgle:LineSegment
+                    End="-256.933317078651,21.9475598828696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-256.933317078651,21.9475598828696"
+                    Point2="-260.933317078651,21.9475598828696"
+                    Point3="-260.933317078651,25.9475598828696" />
+                  <mssgle:LineSegment
+                    End="-260.933317078651,46.5333327065571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-145.063006195575,26.9475598828696,29.1926953125,9.724609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13978,121 +14129,88 @@ ticket_no=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\calltickettable-merge-diff\Delete calltickettable"
-          TopLeft="41.3333313754864,450.966663568947" />
+          Size="129.6,41.6"
+          Id="Package\calltickettable-merge-diff\Merge Join"
+          TopLeft="349.999980876844,247.533331712153" />
         <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Delete]"
-          TopLeft="385.866648454137,396.93333086239">
+          Id="Package\calltickettable-merge-diff.Paths[Sort Output]"
+          TopLeft="260.099991121392,269.222220544793">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-260.933317078651,54.0333327065571"
+              EndConnector="89.8999897554519,0"
               Start="0,0"
-              End="-260.933317078651,46.5333327065571">
+              End="82.3999897554519,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.9475598828696" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.9475598828696"
-                    Point2="0,21.9475598828696"
-                    Point3="-4,21.9475598828696" />
-                  <mssgle:LineSegment
-                    End="-256.933317078651,21.9475598828696" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-256.933317078651,21.9475598828696"
-                    Point2="-260.933317078651,21.9475598828696"
-                    Point3="-260.933317078651,25.9475598828696" />
-                  <mssgle:LineSegment
-                    End="-260.933317078651,46.5333327065571" />
+                    End="82.3999897554519,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-145.063006195575,26.9475598828696,29.1926953125,9.724609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\calltickettable-merge-diff\Insert Calltickettable"
-          TopLeft="354.999980603656,450.999996908307" />
         <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Insert]"
-          TopLeft="437.699981195563,396.93333086239">
+          Id="Package\calltickettable-merge-diff.Paths[Sort Output1]"
+          TopLeft="556.666636251742,269.222220544793">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54.0666660459171"
+              EndConnector="-77.0666553748981,0"
               Start="0,0"
-              End="0,46.5666660459171">
+              End="-69.5666553748981,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5666660459171" />
+                    End="-69.5666553748981,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.75298828125,18.5821611479586,27.5059765625,9.40234375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\calltickettable-merge-diff\Update calltickettable"
-          TopLeft="644.833298319745,453.133330265747" />
         <EdgeLayout
-          Id="Package\calltickettable-merge-diff.Paths[Update]"
-          TopLeft="446.533315120804,396.93333086239">
+          Id="Package\calltickettable-merge-diff.Paths[Merge Join Output]"
+          TopLeft="412.466647998824,289.133331712153">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="281.899983198941,56.1999994033573"
+              EndConnector="0,66.1999991502367"
               Start="0,0"
-              End="281.899983198941,48.6999994033573">
+              End="0,58.6999991502367">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.3726960400651" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.3726960400651"
-                    Point2="0,19.3726960400651"
-                    Point3="4,19.3726960400651" />
-                  <mssgle:LineSegment
-                    End="277.899983198941,19.3726960400651" />
-                  <mssgle:CubicBezierSegment
-                    Point1="277.899983198941,19.3726960400651"
-                    Point2="281.899983198941,19.3726960400651"
-                    Point3="281.899983198941,23.3726960400651" />
-                  <mssgle:LineSegment
-                    End="281.899983198941,48.6999994033573" />
+                    End="0,58.6999991502367" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="124.669698630721,24.3726960400651,32.5605859375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\calltickettable-merge-diff\src_calltickettable">
+    design-time-name="Package\calltickettable-merge-diff\Insert Calltickettable">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -14110,15 +14228,10 @@ ticket_no=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\calltickettable-merge-diff\Insert Calltickettable">
+    design-time-name="Package\calltickettable-merge-diff\src_calltickettable">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
